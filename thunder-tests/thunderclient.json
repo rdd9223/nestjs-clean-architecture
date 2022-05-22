@@ -1,0 +1,21 @@
+[
+  {
+    "_id": "5fea902b-4ccc-43a3-9fd6-742e0fbf94d5",
+    "colId": "ae74aa6a-ceea-4d63-a779-2b7c11579c6e",
+    "containerId": "",
+    "name": "localhost:3000/users",
+    "url": "localhost:3000/users",
+    "method": "POST",
+    "sortNum": 10000,
+    "created": "2022-05-22T07:46:56.281Z",
+    "modified": "2022-05-22T07:46:56.281Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"name\": \"강영우\",\n    \"email\": \"rdd9223@gmail.com\",\n    \"password\": \"1234\"\n}",
+      "form": []
+    },
+    "tests": []
+  }
+]

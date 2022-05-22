@@ -1,0 +1,71 @@
+[
+  {
+    "_id": "53e25cae-8b01-43b1-99f1-2bf841e717d7",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/users",
+    "url": "localhost:3000/users",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-05-22T07:37:52.994Z",
+    "modified": "2022-05-22T07:49:14.074Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"name\": \"강영우\",\n    \"email\": \"rdd9223@gmail.com\",\n    \"password\": \"1234\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "691f524a-5efc-4c0a-893f-0031114f4cc8",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/users/email-verify?signupVerifyToken=a4e05f60-d9a2-11ec-87a7-3dd433eb720b",
+    "url": "localhost:3000/users/email-verify?signupVerifyToken=a4e05f60-d9a2-11ec-87a7-3dd433eb720b",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-05-22T07:47:14.407Z",
+    "modified": "2022-05-22T07:49:25.539Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "signupVerifyToken",
+        "value": "a4e05f60-d9a2-11ec-87a7-3dd433eb720b",
+        "isPath": false
+      }
+    ],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"name\": \"강영우\",\n    \"email\": \"rdd9223@gmail.com\",\n    \"password\": \"1234\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "f1a7e4a0-294d-4d0c-91e7-c1ac882ca153",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/users/email-verify?signupVerifyToken=a4e05f60-d9a2-11ec-87a7-3dd433eb720b",
+    "url": "localhost:3000/users/email-verify?signupVerifyToken=a4e05f60-d9a2-11ec-87a7-3dd433eb720b",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-05-22T07:51:01.719Z",
+    "modified": "2022-05-22T07:51:01.725Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "signupVerifyToken",
+        "value": "a4e05f60-d9a2-11ec-87a7-3dd433eb720b",
+        "isPath": false
+      }
+    ],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"name\": \"강영우\",\n    \"email\": \"rdd9223@gmail.com\",\n    \"password\": \"1234\"\n}",
+      "form": []
+    },
+    "tests": []
+  }
+]
