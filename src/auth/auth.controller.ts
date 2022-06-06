@@ -8,12 +8,14 @@ import {
   Res,
   UnauthorizedException,
   Get,
+  SerializeOptions,
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { RegisterDto } from './dto/register.dto';
 import RequestWithUser from './interface/request-with-user.interface';
 import { LocalAuthGuard } from './guard/local-auth.guard';
 import JwtAuthGuard from './guard/jwt-auth.guard';
+import { Response } from 'express';
 
 @Controller('auth')
 export class AuthController {
@@ -36,17 +38,16 @@ export class AuthController {
 
     const cookie = this.authService.getCookieWithJwtToken(user.id);
 
-    response.headers.set('Set-Cookie', cookie);
+    response.setHeader('Set-Cookie', cookie);
 
-    return user;
+    return response.send(user);
   }
 
-  @HttpCode(200)
   @UseGuards(JwtAuthGuard)
   @Post('log-out')
   async logOut(@Res() response: Response) {
-    response.headers.set('Set-Cookie', this.authService.getCookieForLogOut());
-    return response;
+    response.setHeader('Set-Cookie', this.authService.getCookieForLogOut());
+    return response.sendStatus(200);
   }
 
   @UseGuards(JwtAuthGuard)

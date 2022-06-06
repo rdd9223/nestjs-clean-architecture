@@ -1,12 +1,13 @@
 import { UsersService } from 'src/users/users.service';
 import { RegisterDto } from './dto/register.dto';
 import bcrypt from 'bcrypt';
-import { HttpException, HttpStatus } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { EnPostgresErrorCode } from 'src/database/postgres-error-code.enum';
 import { JwtService } from '@nestjs/jwt';
 import { ConfigService } from '@nestjs/config';
 import { TokenPayload } from './interface/token-payload.interface';
 
+@Injectable()
 export class AuthService {
   constructor(
     private readonly usersService: UsersService,
@@ -54,6 +55,7 @@ export class AuthService {
   public getCookieWithJwtToken(userId: number) {
     const payload: TokenPayload = { userId };
     const token = this.jwtService.sign(payload);
+
     return `Authentication=${token}; HttpOnly; Path=/; Max-Age=${this.configService.get(
       'JWT_EXPIRATION_TIME',
     )}`;

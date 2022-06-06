@@ -12,6 +12,7 @@ import { PostsService } from './posts.service';
 import { CreatePostDto } from './dto/create-post.dto';
 import { UpdatePostDto } from './dto/update-post.dto';
 import JwtAuthGuard from 'src/auth/guard/jwt-auth.guard';
+import { FindOneParamsDto } from 'src/utils/dto/find-one-params.dto';
 
 @Controller('posts')
 export class PostsController {
@@ -29,17 +30,20 @@ export class PostsController {
   }
 
   @Get(':id')
-  getPostById(@Param('id') id: string) {
+  getPostById(@Param() { id }: FindOneParamsDto) {
     return this.postsService.getPostById(+id);
   }
 
   @Patch(':id')
-  updatePost(@Param('id') id: string, @Body() updatePostDto: UpdatePostDto) {
+  updatePost(
+    @Param() { id }: FindOneParamsDto,
+    @Body() updatePostDto: UpdatePostDto,
+  ) {
     return this.postsService.updatePost(+id, updatePostDto);
   }
 
   @Delete(':id')
-  deletePost(@Param('id') id: string) {
+  deletePost(@Param() { id }: FindOneParamsDto) {
     return this.postsService.deletePost(+id);
   }
 }
